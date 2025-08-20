@@ -1,9 +1,18 @@
-import { useGlobalContext } from "./context"
+import { useGlobalContext } from "./context";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const ThemeToggle = () => {
-
+  const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
   return (
-    <div>ThemeToggle</div>
-  )
-}
-export default ThemeToggle
+    <section className="toggle-container">
+      <button className="dark-toggle" onClick={toggleDarkTheme}>
+        {isDarkTheme ? (
+          <FaSun className="toggle-icon" />
+        ) : (
+          <FaMoon className="toggle-icon" />
+        )}
+      </button>
+    </section>
+  );
+};
+export default ThemeToggle;
